@@ -1,4 +1,4 @@
-# Your one and only trading bot
+# Your One And Only Trading Bot
 ## _No seriously, we mean it!_
 
 [![Robot](https://forextotalblue.net/wp-content/uploads/2021/05/TradingBot.jpg)](https://forextotalblue.net/wp-content/uploads/2021/05/TradingBot.jpg)

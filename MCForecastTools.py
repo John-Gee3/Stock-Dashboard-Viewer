@@ -93,8 +93,11 @@ class MCSimulation:
         for n in range(self.nSim):
         
             if n % 10 == 0:
-                print(f"Running Monte Carlo simulation number {n}.")
-        
+                #print(f"Running Monte Carlo simulation number {n}.")
+                ############ add ####################
+                continue
+                #####################################
+            
             # Create a list of lists to contain the simulated values for each stock
             simvals = [[p] for p in last_prices]
     
@@ -136,7 +139,10 @@ class MCSimulation:
             
         # Use Pandas plot function to plot the return data
         plot_title = f"{self.nSim} Simulations of Cumulative Portfolio Return Trajectories Over the Next {self.nTrading} Trading Days."
-        return self.simulated_return.plot(legend=None,title=plot_title)
+        #return self.simulated_return.plot(legend=None,title=plot_title)
+        ######## Add #######################
+        return self.simulated_return, plot_title
+        ####################################
     
     def plot_distribution(self):
         """

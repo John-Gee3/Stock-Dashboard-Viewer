@@ -1,0 +1,38 @@
+alerts:
+- rule: DEPLOYMENT_FAILED
+- rule: DOMAIN_FAILED
+name: stock-sentiment-dashboard
+region: sfo
+services:
+- environment_slug: python
+  envs:
+  - key: ALPACA_API_KEY
+    scope: RUN_AND_BUILD_TIME
+    value: PK3B1ZCTATMUWGQHV0E3
+  - key: ALPACA_SECRET_KEY
+    scope: RUN_AND_BUILD_TIME
+    value: t2qDcjEx6zpKNngSoeXRgheoLDSBdnECwjRB9liY
+  - key: TWIT_API
+    scope: RUN_AND_BUILD_TIME
+    value: weCGttPkKpMenmtc70fI64zKO
+  - key: TWIT_SECRET
+    scope: RUN_AND_BUILD_TIME
+    value: ijFtrLpoGVu2DA7ugix7IicOtaX2NWxsSct73noXdGbWCHKzan
+  - key: ACCESS_TOKEN
+    scope: RUN_AND_BUILD_TIME
+    value: 158405268-v8iI75oqR5SxOqCxmBcjcUhNArSiaJRQQDFF2SMc
+  - key: ACCESS_TOKEN_SECRET
+    scope: RUN_AND_BUILD_TIME
+    value: wY2mOI4RM4LrlzSsM9CPtb1NEsEVIdE6Q19HLZEKFpYMm
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: JQH84/Stock_Sentiment_Dashboard
+  http_port: 8080
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  name: stock-sentiment-dashboard
+  routes:
+  - path: /
+  run_command: web: python -m panel serve app.py
+  source_dir: /
